@@ -11,8 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./res/css/main.css">
     <link rel="stylesheet" href="./res/css/swiper.css">
+    <link rel="stylesheet" href="./res/css/main.css">
+    
     <script src="./res/js/jq.js"></script> 
     <script src="./res/js/swiper.js"></script> 
   </head>
@@ -23,16 +24,19 @@
       <div id="navigation">
         <div class="content">
           <div class="wrapper">
-            <a href="/" class="noresize"><img src="./res/img/logo.svg"></a>
-            <div class="noresize al">
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">About</a></li>
-                <li><a href="/">The Secience</a></li>
-                <li><a href="/">Shop Bulk</a></li>
-                <li><a href="/">Ordering</a></li>
-                <li><a href="/">News</a></li> 
-              </ul>
+            <button id="burger" class="noresize"><i></i><i></i><i></i></button>
+            <div id="burger_menu" class="noresize">
+              <a href="/" class="noresize"><img src="./res/img/logo.svg"></a>
+              <div class="noresize al">
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/">About</a></li>
+                  <li><a href="/">The Secience</a></li>
+                  <li><a href="/">Shop Bulk</a></li>
+                  <li><a href="/">Ordering</a></li>
+                  <li><a href="/">News</a></li> 
+                </ul>
+              </div>
             </div>
             <div class="resize"></div>
             <button class="cart noresize"><img src="./res/img/icon_cart.svg" alt=""></button>
@@ -327,6 +331,15 @@
 
   <script>
     $(document).ready(function(){ 
+      $('#burger').off().on('click', function(){
+        var $self = $(this);
+        $self.hide(); 
+        $('#burger_menu').show().off().on('mouseleave', function(){
+          var $self = $(this);
+          $self.hide(); 
+          $('#burger').show();
+        })
+      });
         var swiper = new Swiper(".swiper", {
             //effect: "coverflow",
             grabCursor: true,
