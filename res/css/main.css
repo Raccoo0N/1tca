@@ -1,8 +1,8 @@
 /* MISC */
 @font-face {
   font-family: "Metropolis";
-  src: url('./res/fonts/PsoUsrStandart-Regular.otf') format("otf"),
-    url('./res/fonts/Metropolis-Regular') format("truetype");
+  src: url('../fonts/PsoUsrStandart-Regular.otf') format("otf"),
+    url('../fonts/Metropolis-Regular') format("truetype");
   font-style: normal;
   font-weight: normal;
 }
@@ -22,7 +22,7 @@ button{ cursor:pointer; border:0; }
 .content{ max-width:1110px; padding:0px; margin:0px auto; position:relative; }
 .btn{ display:block; height:48px; padding:0px 25px; margin:0px auto; background:#006FF9; color:#fff; text-align:center; font-family:"Inter","Arial"; font-size: 16px; font-weight: 400; line-height: 24px; border:0; border-radius:4px; cursor:pointer; text-transform:uppercase; }
 .btn.white{ background:#fff; border:solid 1px #006FF9; color:#006FF9; } 
-@media screen and (max-width:960px) { 
+@media screen and (max-width:1140px) { 
   .content{ padding:0px 10px; }
 }
 /* HEADER */ 
@@ -33,6 +33,10 @@ header{ display:block; width:100%; min-height:750px; padding:0px; margin:0px; po
   #blue_bg::before{ display:block; content:""; position:absolute; left:0px; bottom:0px; width:32px; height:30px; background:#fff; } 
   #blue_bg div{ display:block; position:absolute; top:540px; left:120px; width:110px; height:110px; background:rgba(255,255,255,0.1); transform-origin:center; transform: rotateZ(27deg); } 
   #blue_bg b{ display:block; position:absolute; top:25px; left:0px; width:35px; height:47px; background:#fff; } 
+  #burger{ display:none; width:40px; height:40px; padding:0px; margin:0px 10px 0px 0px; cursor:pointer; position:relative; overflow:hidden; background:#fff; }
+  #burger i{ display:block; width:100%; height:8px; background:#5e5e5e; padding:0px; margin:0px 0px 8px 0px; } 
+  #burger i:last-child{ margin:0; }
+  #burger_menu{ display:flex; flex-flow:row nowrap; justify-content:start; align-items:center; gap:15px; padding:0px; margin:0px; }
   #navigation{ height:100px; }
   #navigation .wrapper{ height:100px; display:flex; flex-flow:row nowrap; justify-content:stretch; align-items:center; gap:25px; padding:0px; margin:0px; }
   #navigation ul{ height:50px; display:flex; flex-flow:row nowrap; justify-content:start; align-items:center; gap:0px; padding:0px; margin:0px; list-style:none; text-align:left; }
@@ -56,8 +60,11 @@ header{ display:block; width:100%; min-height:750px; padding:0px; margin:0px; po
   #header_info .socials a{ display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:0; width:24px; height:24px; padding:0px; margin:0px; } 
 
   @media screen and (max-width:960px) { 
-    #navigation .wrapper{ position:fixed; top:0px; left:0px; width:300px; height:500px; }
-    #navigation .wrapper ul{ flex-flow:column nowrap; }
+    #burger{ display:block; }
+    #burger_menu{ display:none; position:fixed; top:0px; left:0px; background:#fff; box-shadow: 0px 20px 20px 0px #D4D9E833; z-index:100; padding:20px 10px; flex-flow:column nowrap; justify-content:start; align-items:start; }
+    #burger_menu ul{ height:auto; flex-flow:column nowrap; }
+    #burger_menu li{ height:40px; width:100%; text-align:left; }
+    #burger_menu li a{ margin:0; justify-content:start; }
   }
 /* MAIN */ 
 main{  } 
@@ -80,9 +87,9 @@ main h2 span{ display:block; color:#999; text-align:center; font-family:"Metropo
 #properties .wrapper .item p{ font-size: 15px; font-weight: 400; line-height: 28px; text-align: left; color:#6F7074; padding:0px; margin:0px 0px 25px 0px; } 
 #properties .wrapper .item.blue p{ color:#FAFAFA; }
 #properties .wrapper .item a{ font-size: 16px; font-weight: 500; line-height: 15px; text-align: left; position:relative; margin:0px; padding:0px; }
-#properties .wrapper .item a::after{ display:block; content:""; position:absolute; top:0px; left:100%; width:50%; height:100%; background:transparent url('./res/img/icon_arrow_right.svg') 8px 7px no-repeat; } 
+#properties .wrapper .item a::after{ display:block; content:""; position:absolute; top:0px; left:100%; width:50%; height:100%; background:transparent url('../img/icon_arrow_right.svg') 8px 7px no-repeat; } 
 #properties .wrapper .item.blue a{ color:#fff; }
-#properties .wrapper .item.blue a::after{ background-image:url('./res/img/icon_arrow_right_w.svg'); } 
+#properties .wrapper .item.blue a::after{ background-image:url('../img/icon_arrow_right_w.svg'); } 
 /* RECYCLABLE */
 #recyclable{ padding-bottom:110px; }
 #recyclable .wrapper{ display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center; gap:79px; padding:0px; margin:0px; } 
@@ -95,7 +102,7 @@ main h2 span{ display:block; color:#999; text-align:center; font-family:"Metropo
 #recyclable .description h3{ font-size: 26px; font-weight: 600; line-height: 36px; text-align: left; margin:0px 0px 15px 0px; padding:0px; }
 #recyclable .description p{ font-size: 15px; font-weight: 400; line-height: 28px; text-align: left; color: #6F7074; margin:0px 0px 35px 0px; padding:0px; }
 #recyclable .description a{ font-size: 16px; font-weight: 500; line-height: 15px; text-align: left; position:relative; margin:0px; padding:0px; }
-#recyclable .description a::after{ display:block; content:""; position:absolute; top:0px; left:100%; width:50%; height:100%; background:transparent url('./res/img/icon_arrow_right.svg') 8px 7px no-repeat; }
+#recyclable .description a::after{ display:block; content:""; position:absolute; top:0px; left:100%; width:50%; height:100%; background:transparent url('../img/icon_arrow_right.svg') 8px 7px no-repeat; }
 /* PROTECT */ 
 #protect{ background:#F4F9FE; padding:80px 0px 100px 0px; } 
 #protect .wrapper{ display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center; gap:30px; padding:0px; margin:0px; }
@@ -110,7 +117,7 @@ main h2 span{ display:block; color:#999; text-align:center; font-family:"Metropo
 #reasons .description{ /*max-width:450px;*/ }
 #reasons .description h3{ font-size: 36px; font-weight: 600; line-height: 43.57px; text-align: left; padding:0px; margin:0px 0px 20p 0px; }
 #reasons .description ul{ list-style:none; padding:0px; margin:0px; } 
-#reasons .description li{ font-family:"Inter", "Arial"; font-size: 16px; font-weight: 400; line-height: 36px; text-align: left; color:#6F7074; margin:0px; padding:0px 0px 0px 24px; background:transparent url('./res/img/icon_ok.svg') left 10px no-repeat; }
+#reasons .description li{ font-family:"Inter", "Arial"; font-size: 16px; font-weight: 400; line-height: 36px; text-align: left; color:#6F7074; margin:0px; padding:0px 0px 0px 24px; background:transparent url('../img/icon_ok.svg') left 10px no-repeat; }
 #reasons .image{ max-width:450px; position:relative; }
 #reasons .photo{ width:100%; }
 #reasons .signum{ position:absolute; bottom:0px; left:0px; width:172px; height:auto; margin:0px 0px -45px -60px; }
@@ -118,7 +125,9 @@ main h2 span{ display:block; color:#999; text-align:center; font-family:"Metropo
 #feedback{ padding-bottom:300px; }
 #feedback .slider{ height:410px; }
 .swiper { width:100%; max-width:1110px; height:100%; overflow:hidden; } 
-.swiper-slide{ width:100%; }
+.swiper-slide{ width:100%; } 
+.swiper-pagination-bullet{ width:11px !important; height:11px !important; background:#006FF9 !important; border:solid 3px #fff !important; opacity:1 !important; }
+.swiper-pagination-bullet-active{ background:#fff !important; border:solid 3px #006FF9 !important; }
 #feedback .wrapper{ width:100%; display:flex; flex-flow:row nowrap; justify-content:stretch; align-items:start; gap:30px; padding:0px; margin:0px; }
 #feedback .wrapper .item{ height:353px; text-align:center; }
 #feedback .wrapper .item .text{ width:350px; height:205px; border-radius:10px; box-shadow: 0px 30px 40px 0px #D4D9E833; text-align:center; position:relative; padding:0px 30px; margin:0px 0px 30px 0px; background:#fff; }
@@ -132,7 +141,7 @@ main h2 span{ display:block; color:#999; text-align:center; font-family:"Metropo
 #feedback .wrapper .item h5{ font-size: 14px; font-weight: 400; line-height: 24px; text-align: center; color:#6F7074; padding:0; margin:0px; }
 /* FOOTER */ 
 footer{ background:#212529; padding:0px; margin:0px; position:relative; /*overflow:hidden;*/ }
-footer::before{ display:block; content:""; position:absolute; /*bottom:-10px; right:-24px;*/ bottom:0px; right:0px; width:100%; height:100%; background:transparent url('./res/img/corner_bottom_right.svg') right bottom no-repeat; }
+footer::before{ display:block; content:""; position:absolute; /*bottom:-10px; right:-24px;*/ bottom:0px; right:0px; width:100%; height:100%; background:transparent url('../img/corner_bottom_right.svg') right bottom no-repeat; }
 
 #bluebox{ position:absolute; left:0px; right:0px; top:-165px; z-index:100; }
 #bluebox .content{ position:relative; overflow:hidden; }
@@ -148,9 +157,9 @@ footer .info .wrapper .item{ text-align:left; flex-grow:0; flex-shrink:0; width:
 footer .info .wrapper .item h4{ font-size: 16px; font-weight: 500; line-height: 21px; text-align: left; color:#fff; border-bottom:solid 1px #6F7074; padding:0px 0px 12px 0px; margin:0px 0px 12px 0px; }
 footer .info .wrapper .item a{ display:block; width:auto; text-align:left; font-family:"Inter", "Arial"; font-size: 14px; font-weight: 400; line-height: 30px; text-align: left; color:#fafafa; }
 footer .info .wrapper .item a.icon{ font-size:13px; line-height:14px; padding-left:20px; margin-top:20px; background-position:left top; background-repeat:no-repeat; }
-footer .info .wrapper .item a.icon.phone{ background-image:url('./res/img/icon_phone.svg'); }
-footer .info .wrapper .item a.icon.mail{ background-image:url('./res/img/icon_mail.svg'); }
-footer .info .wrapper .item a.icon.geo{ background-image:url('./res/img/icon_geo.svg'); }
+footer .info .wrapper .item a.icon.phone{ background-image:url('../img/icon_phone.svg'); }
+footer .info .wrapper .item a.icon.mail{ background-image:url('../img/icon_mail.svg'); }
+footer .info .wrapper .item a.icon.geo{ background-image:url('../img/icon_geo.svg'); }
 footer .info .wrapper .item p{ font-family:"Inter", "Arial"; font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; color:#fff; padding:20px 0px; margin:0px; }
 footer .info .wrapper .item .socials{ display:flex; flex-flow:row nowrap; justify-content:start; align-items:center; gap:10px; padding:0px; margin:0px; }
 footer .info .wrapper .item .socials a{ display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:0; width:24px; height:24px; padding:0px; margin:0px; }
