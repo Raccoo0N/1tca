@@ -85,9 +85,11 @@ header::after{ display:block; content:""; position:absolute; top:0px; right:0px;
 
   #burger{ background:transparent; }
   #burger i{ background:#fff; }
-} 
-@media screen and (max-width:860px) { 
+  
   #header_info .description .buttons{ flex-flow:row wrap; justify-content:center; }
+} 
+@media screen and (max-width:400px) { 
+  #header_info .description .buttons button{ width:150px; }
 }
 /* MAIN */ 
 main{  } 
@@ -169,7 +171,7 @@ main h2 span{ display:block; color:#999; text-align:center; font-family:"Metropo
   #reasons{ padding-bottom:300px; }
 }
 @media screen and (max-width:900px) { 
-  #reasons .wrapper{ flex-flow:row wrap; justify-content:center; } 
+  #reasons .wrapper{ flex-flow:row wrap; justify-content:center; overflow-x:hidden; } 
   #reasons .description{ order:2; }
   #reasons .image{ order:1; }
 }
