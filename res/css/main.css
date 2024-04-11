@@ -149,6 +149,7 @@ main h2 span{ display:block; color:#999; text-align:center; font-family:"Metropo
 #protect .wrapper .item p{ font-family:"Inter"; font-size: 16px; font-weight: 400; line-height: 24px; text-align: center; color: #6F7074; padding:0px 20px; margin-bottom:20px; }
 #protect .wrapper .item button{ margin:0px auto; }
 @media screen and (max-width:900px) { 
+  #protect{ margin-bottom:50px; }
   #protect .wrapper{ flex-flow:row wrap; }
 } 
 @media screen and (max-width:760px) { 
